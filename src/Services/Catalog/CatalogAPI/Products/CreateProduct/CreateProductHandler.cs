@@ -9,7 +9,7 @@ public record CreateProductCommand(
     string ImageFile,
     decimal Price
 ): IRequest<CreateProductResult>;
-public class CreateProductResult(Guid Id);
+public record CreateProductResult(Guid Id);
 
 internal class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, CreateProductResult>
 {
