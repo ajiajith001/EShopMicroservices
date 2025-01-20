@@ -1,6 +1,6 @@
 ﻿namespace Basket.API.Data
 {
-    public class BasketRepository(IDocumentSession session) : IBacketRepository
+    public class BasketRepository(IDocumentSession session) : IBasketRepository
     {
         public async Task<bool> DeleteBasket(string userName, CancellationToken cancellationToken = default)
         {
