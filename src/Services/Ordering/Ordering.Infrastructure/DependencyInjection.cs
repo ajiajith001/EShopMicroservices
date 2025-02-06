@@ -9,9 +9,11 @@ namespace Ordering.Infrastructure
             this IServiceCollection services, IConfiguration configuration)
         {
             var connectionString = configuration.GetConnectionString("Database");
+
             //// Add Services to the container
-            //services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
-            //services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+            services.AddDbContext<AppDbContext>(options => 
+                options.UseSqlServer(connectionString));
+            //services.AddScoped<IApplicationDbContext, AppDbContext>();
 
             return services;
         }
